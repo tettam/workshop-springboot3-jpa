@@ -4,11 +4,8 @@ import java.io.Serializable;
 
 import java.time.Instant;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
 import com.portfolio.course.entities.enums.OrderStatus;
 
 import jakarta.persistence.Entity;
@@ -34,7 +31,7 @@ public class Order implements Serializable{
   private Integer orderStatus;
 
   @JsonIgnore
-  @ManyToOne //entidade pode ter muitos relacionamentos com outra entidad
+  @ManyToOne //entidade pode ter muitos relacionamentos com outra entidade
   @JoinColumn(name = "client_id") //relacionamento entre as entidades é armazenado em uma coluna na tabela "Order".
   private User client;
 
