@@ -63,6 +63,11 @@ public class OrderItem implements Serializable {
     this.price = price;
   }
 
+  //Método no JavaEE é necessário ser usado pelo get
+  public Double getSubTotal(){
+    return price * quantity;
+  }
+
   @Override
   public int hashCode() {
     final int prime = 31;
